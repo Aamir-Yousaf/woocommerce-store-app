@@ -1,3 +1,9 @@
-.carousel-inner img {
-    width:100%
-}
+.carousel-inner img {width:100%;}
+.products-left.col-sm-6 { border-radius: 20px; box-shadow: 0 20px 40px 0 rgba(239, 239, 239, .92); padding: 10% 7% 9% 5%;  background-color:#EDEEF1; position: relative;}
+.main-heading{ color: #fff; font-family: montserrat, Sans-serif;font-size: 3rem; font-weight: 900; text-transform: uppercase; line-height: 61px; letter-spacing: -1.3px; }
+.heading{font-family: poppins, Sans-serif;font-size: 30px;font-weight: 700;line-height: 46px;letter-spacing: -1px;color: black }
+img.gaming-img { position: absolute; top: 50%; right: 0;}
+.product-glass{  border-radius: 20px; box-shadow: 0 20px 40px 0 rgba(239, 239, 239, .92); padding: 5% 0 0 10%;  background-color:#2DD06F; position: relative;}
+.product-main-glass { padding: 0 10px; }
+img.glasses-img { position: absolute; width: 90%; /* bottom: 0; */ right: 0; bottom: 0;}
+.main-heading-glass{    color: #57d68b;font-family: montserrat, Sans-serif; font-size: 50px; font-weight: 900; text-transform: uppercase; line-height: 61px; letter-spacing: -1.3px; }

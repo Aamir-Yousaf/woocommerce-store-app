@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+import "./Home.css";
 import {
   Carousel,
   CarouselItem,
@@ -49,7 +51,7 @@ function Home() {
              width: "19rem",
            }}
          >
-           <img alt="Sample" src={item.image[2]} />
+           <img alt="Sample" src={item.image[0]} />
            <CardBody>
              <CardTitle tag="h5">{item.name}</CardTitle>
              <CardText>RS.{item.price}</CardText>
@@ -134,10 +136,44 @@ function Home() {
       ) : (
         <Row>
           {SelectedTab === 1
-            ? renderITems (NewArrivalItems) : renderITems (BestSelling)
-              }
+            ? renderITems(NewArrivalItems)
+            : renderITems(BestSelling)}
         </Row>
       )}
+      {/* New Container with Three Columns */}
+      <Container fluid className="main-product-box mt-5">
+        <Row className="box-flex gx-2 ">
+          <Col className="products-left  " sm={6}>
+            <div className="product-main">
+              <h5 className="sub-heading">Best</h5>
+              <h3 className="heading">Gaming</h3>
+              <h2 className="main-heading ">CONSOLE</h2>
+              <Button
+                color="danger"
+                className="game-btn text-white mt-3 py-2 px-5 rounded-pill"
+              >
+                Browse
+              </Button>
+              <img className="gaming-img" src="/Imgs/gaming.png"></img>
+            </div>
+          </Col>
+          <Col sm={6} className="product-glass">
+            <div className="product-main-glass">
+              <h5 className="sub-heading-glass">Play</h5>
+              <h3 className="heading-glass">Game</h3>
+              <h2 className="main-heading-glass ">oculus</h2>
+              <Button
+                color="danger"
+                outline
+                className="game-btn  mt-3 py-2 px-5 rounded-pill bg-white text-black"
+              >
+                Browse
+              </Button>
+              <img className="glasses-img" src="/Imgs/glasses.png"></img>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </Container>
   );
 }

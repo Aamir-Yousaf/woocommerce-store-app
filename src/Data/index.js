@@ -1,4 +1,6 @@
 import { v4 } from "uuid";
+
+
 export const SliderItems = [
   {
     src: "https://picsum.photos/id/123/1200/400",
@@ -26,6 +28,7 @@ export const NewArrivalItems = [
     name: "T-shirt",
     price: 800,
     image: [
+      "/Imgs/headphone.jpg",
       "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
