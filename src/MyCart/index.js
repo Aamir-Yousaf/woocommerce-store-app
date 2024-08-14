@@ -1,50 +1,72 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button, Container, Table } from "reactstrap"; // Button import removed as it's not used
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
 import { faTrash } from "@fortawesome/free-solid-svg-icons"; // Import the trash icon
+import { emptyCart,removeFromCart } from "../slice/Cart";
+import "./mycart.css";
+import { useNavigate } from "react-router-dom";
 export function Cart() {
-  const{ Cart} = useSelector((state) => state); // Use camelCase for variable naming
-
+  const navigate = useNavigate();
+  const{ Cart} = useSelector((state) => state);
+  const dispatch = useDispatch(); // Use camelCase for variable naming
+  const handleEmptyCart = () => {
+    dispatch(emptyCart());
+  };
+  
+  const handleCheckOut = () =>{
+        navigate("/checkout");
+  }
+  const handleProductDelete = (index) => {
+    dispatch(removeFromCart(index)); 
+  };
   return (
     <Container fluid className="mt-5">
       <h2 className="my-3 text-center">Cart Details</h2>
+
       {Cart.length === 0 ? (
         <p className="text-center text-danger">Your Cart is empty</p>
       ) : (
-        <Table bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Product Name</th>
-              <th>Description</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Cart.map((item, i) => (
-              <tr key={i}>
-                <th scope="row">{i + 1}</th>
-                <td>{item.name}</td>
-                <td>{item.description}</td>
-                <td>PKR {item.price}</td>
-                <td>
-                  <Button color="danger">
-                    <FontAwesomeIcon icon={faTrash} />
-                  </Button>
+        <>
+          <Table bordered hover>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Cart.map((item, i) => (
+                <tr key={i}>
+                  <th scope="row">{i + 1}</th>
+                  <td>{item.name}</td>
+                  <td>{item.description}</td>
+                  <td>PKR {item.price}</td>
+                  <td>
+                    <Button onClick={()=>handleProductDelete(i)} color="danger">
+                      <FontAwesomeIcon icon={faTrash} />
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+              <tr>
+                <td colSpan="4" className="text-center">
+                  Total: PKR {Cart.reduce((acc, item) => acc + item.price, 0)}
+                </td>
+                <td colSpan="2">
+                  <Button onClick={handleCheckOut} color="primary">Checkout</Button>
                 </td>
               </tr>
-            ))}
-            <tr>
-              <td colSpan="4" className="text-center">
-                Total: PKR {Cart.reduce((acc, item) => acc + item.price, 0)}
-              </td>
-              <td colSpan="2">
-                <Button color="primary">Checkout</Button>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
+            </tbody>
+          </Table>
+          <div className="All-emoty-btn">
+            <Button color="danger" onClick={handleEmptyCart}>
+              Empty Cart
+            </Button>
+          </div>
+        </>
       )}
     </Container>
   );

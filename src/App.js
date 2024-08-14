@@ -9,6 +9,7 @@ import "./Home/Home.css";
  import "react-toastify/dist/ReactToastify.css";
 import { Cart } from "./MyCart";
 import User from "./Login/login"
+import { CheckOut } from "./Checkout"
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         {/* Cart Page */}
         <Route path="/cart" element={<Cart />} />
         {/* Checkout Page */}
-        <Route path="/checkout" element={<h1>Checkout</h1>} />
+        <Route path="/checkout" element={<CheckOut />} />
       </Routes>
     </div>
   );

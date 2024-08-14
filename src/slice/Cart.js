@@ -10,11 +10,13 @@ const cartSlice = createSlice({
       toast.success("Product add to Cart");
     },
     emptyCart: (state) => {
-      return (state = []);
-      toast.error("Product removed from Cart");
+      return [];
+    },
+    removeFromCart: (state, action) => {
+      return state.filter((item, index) => index !== action.payload); // Remove item by index
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, emptyCart, removeFromCart } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -12,6 +12,9 @@ import {
 } from "reactstrap";
 import { setUserLogin } from "../slice/userSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFaceSmile } from "@fortawesome/free-solid-svg-icons";
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -28,16 +31,22 @@ export default function Index() {
 
     if (email && password) {
       dispatch(setUserLogin({ email }));
+      toast.success(
+        <div>
+          User successfully Logged In{" "}
+          <FontAwesomeIcon className="text-success" icon={faFaceSmile} />
+        </div>
+      );
       navigate("/");
     } else {
-      alert("Wrong email or password");
+      toast.error("Please enter both email and password");
     }
   };
 
   return (
     <Container>
       <Row>
-        <Col sm={12} md={6} className="mx-auto  ">
+        <Col sm={12} md={6} className="mx-auto">
           <h1 className="text-center mx-3">Login</h1>
           <Form onSubmit={handleChange}>
             <FormGroup>

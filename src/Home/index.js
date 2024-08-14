@@ -152,7 +152,7 @@ function Home() {
               <h3 className="heading">Gaming</h3>
               <h2 className="main-heading ">CONSOLE</h2>
               <Button
-                color="danger"
+                color="primary"
                 className="game-btn text-white mt-3 py-2 px-5 rounded-pill"
               >
                 Browse
