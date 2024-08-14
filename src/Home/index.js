@@ -21,6 +21,7 @@ import {
 import { BestSelling, NewArrivalItems, SliderItems } from "../Data"; // Assuming this imports an array of items
 import { useDispatch } from "react-redux";
 import { addToCart } from "../slice/Cart";
+import { Navigate, useNavigate } from "react-router-dom";
 
 {
   
@@ -31,7 +32,7 @@ function Home() {
   const [animating, setAnimating] = useState(false);
   const [Loading, setLoading] = useState(true);
   const [SelectedTab, setSelectedTab] = useState(1);
-
+ const Navigate = useNavigate();
   const next = () => {
     if (animating) return;
     const nextIndex =
@@ -49,6 +50,7 @@ function Home() {
      return Data.map((item, index) => (
        <Col xs={12} sm={3} key={index}>
          <Card
+           onClick={() => Navigate(`/detail/${SelectedTab}/${item.id}`)} // Corrected onClick handler
            className="main-product-card"
            style={{
              width: "19rem",
@@ -58,7 +60,7 @@ function Home() {
            <CardBody>
              <CardTitle tag="h5">{item.name}</CardTitle>
              <CardText>RS.{item.price}</CardText>
-             
+
              <Button color="primary" onClick={() => dispatch(addToCart(item))}>
                Add to Cart
              </Button>
