@@ -7,3 +7,8 @@ img.gaming-img { position: absolute; top: 50%; right: 0;}
 .product-main-glass { padding: 0 10px; }
 img.glasses-img { position: absolute; width: 90%; /* bottom: 0; */ right: 0; bottom: 0;}
 .main-heading-glass{    color: #57d68b;font-family: montserrat, Sans-serif; font-size: 50px; font-weight: 900; text-transform: uppercase; line-height: 61px; letter-spacing: -1.3px; }
+.container,
+.container-fluid { --bs-gutter-x: 0rem !important;}
+.products-left { width:49% !important;}
+.product-glass {width:49% !important;}
+.box-flex{ column-gap:20px; margin:0 10px;}

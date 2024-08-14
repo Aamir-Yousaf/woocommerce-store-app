@@ -22,6 +22,9 @@ import { BestSelling, NewArrivalItems, SliderItems } from "../Data"; // Assuming
 import { useDispatch } from "react-redux";
 import { addToCart } from "../slice/Cart";
 
+{
+  
+}
 function Home() {
   const dispatch = useDispatch();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -56,7 +59,7 @@ function Home() {
              <CardTitle tag="h5">{item.name}</CardTitle>
              <CardText>RS.{item.price}</CardText>
              
-             <Button onClick={() => dispatch(addToCart(item))}>
+             <Button color="primary" onClick={() => dispatch(addToCart(item))}>
                Add to Cart
              </Button>
            </CardBody>

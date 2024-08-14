@@ -11,4 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.custom-link {
+  color: white !important; /* Text color white */
+  font-weight: 600 !important; /* Font weight 600 */
+  font-size: 1.5rem !important; /* Font size 1.5rem */
+  text-decoration: none; /* Remove underline for links */
+}
+
+.custom-link:hover {
+  color: #f0f0f0 !important; /* Slightly lighter color on hover */
+}
 

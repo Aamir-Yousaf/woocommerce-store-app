@@ -8,18 +8,20 @@ import "./Home/Home.css";
  import { ToastContainer } from "react-toastify";
  import "react-toastify/dist/ReactToastify.css";
 import { Cart } from "./MyCart";
+import User from "./Login/login"
+
 function App() {
   return (
     <div>
-      <ToastContainer/>
+      <ToastContainer />
       <Navbar />
       <Routes>
         {/* Home Page */}
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         {/* Product Page */}
         <Route path="/product-details" element={<h1>Product Details</h1>} />
         {/* Login Page */}
-        <Route path="/login" element={<h1>hhh</h1>} />
+        <Route path="/login" element={<User />} />
         {/* Cart Page */}
         <Route path="/cart" element={<Cart />} />
         {/* Checkout Page */}
