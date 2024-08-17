@@ -8,7 +8,7 @@ import "./mycart.css";
 import { useNavigate } from "react-router-dom";
 export function Cart() {
   const navigate = useNavigate();
-  const{ Cart} = useSelector((state) => state);
+  const{ Cart, user} = useSelector((state) => state);
   const dispatch = useDispatch(); // Use camelCase for variable naming
   const handleEmptyCart = () => {
     dispatch(emptyCart());
@@ -21,7 +21,7 @@ export function Cart() {
     dispatch(removeFromCart(index)); 
   };
   return (
-    <Container fluid className="mt-5">
+    <Container fluid className="my-5">
       <h2 className="my-3 text-center">Cart Details</h2>
 
       {Cart.length === 0 ? (
@@ -43,9 +43,14 @@ export function Cart() {
                   <th scope="row">{i + 1}</th>
                   <td>{item.name}</td>
                   <td>{item.description}</td>
-                  <td>PKR {item.price}</td>
                   <td>
-                    <Button onClick={()=>handleProductDelete(i)} color="danger">
+                    {user.currency} {item.price[user.currency].toFixed(2)}
+                  </td>
+                  <td>
+                    <Button
+                      onClick={() => handleProductDelete(i)}
+                      color="danger"
+                    >
                       <FontAwesomeIcon icon={faTrash} />
                     </Button>
                   </td>
@@ -53,15 +58,18 @@ export function Cart() {
               ))}
               <tr>
                 <td colSpan="4" className="text-center">
-                  Total: PKR {Cart.reduce((acc, item) => acc + item.price, 0)}
+                  Total: {user.currency}
+                  {Cart.reduce((acc, item) => acc + item.price[user.currency].toFixed(2), 0)}
                 </td>
                 <td colSpan="2">
-                  <Button onClick={handleCheckOut} color="primary">Checkout</Button>
+                  <Button onClick={handleCheckOut} color="primary">
+                    Checkout
+                  </Button>
                 </td>
               </tr>
             </tbody>
           </Table>
-          <div className="All-emoty-btn">
+          <div className="All-empty-btn">
             <Button color="danger" onClick={handleEmptyCart}>
               Empty Cart
             </Button>

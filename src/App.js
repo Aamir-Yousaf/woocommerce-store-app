@@ -11,6 +11,7 @@ import { Cart } from "./MyCart";
 import User from "./Login/login";
 import { CheckOut } from "./Checkout";
 import  ProductsDetail  from "./Productdetail";
+import Footer from"./Footer";
 function App() {
   return (
     <div>
@@ -28,6 +29,7 @@ function App() {
         {/* Checkout Page */}
         <Route path="/checkout" element={<CheckOut />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

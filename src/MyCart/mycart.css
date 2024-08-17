@@ -2,3 +2,10 @@
     display: flex;
     justify-content: space-evenly;
   }
+  .All-empty-btn{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  li.Currency-info.dropdown.nav-item {
+    font-size:1.5rem;
+}

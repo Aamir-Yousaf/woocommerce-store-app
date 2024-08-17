@@ -19,7 +19,7 @@ import {
   ButtonGroup,
 } from "reactstrap";
 import { BestSelling, NewArrivalItems, SliderItems } from "../Data"; // Assuming this imports an array of items
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../slice/Cart";
 import { Navigate, useNavigate } from "react-router-dom";
 
@@ -28,6 +28,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 }
 function Home() {
   const dispatch = useDispatch();
+  const {user} = useSelector((state)=> state);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [Loading, setLoading] = useState(true);
@@ -52,16 +53,20 @@ function Home() {
          <Card
            onClick={() => Navigate(`/detail/${SelectedTab}/${item.id}`)} // Corrected onClick handler
            className="main-product-card"
-           style={{
-             width: "19rem",
-           }}
+          //  style={{
+          //    width: "19rem",
+          //  }}
          >
            <img alt="Sample" src={item.image[0]} />
            <CardBody>
              <CardTitle tag="h5">{item.name}</CardTitle>
-             <CardText>RS.{item.price}</CardText>
+             <CardText>{user.currency}{item.price[user.currency].toFixed(2)}</CardText>
 
-             <Button color="primary" onClick={() => dispatch(addToCart(item))}>
+             <Button color="primary" onClick={(e) => {
+              dispatch(addToCart(item));
+              e.stopPropagation();
+            } 
+              }>
                Add to Cart
              </Button>
            </CardBody>
@@ -180,6 +185,7 @@ function Home() {
         </Row>
       </Container>
     </Container>
+    
   );
 }
 

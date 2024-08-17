@@ -8,15 +8,19 @@ import {
   NavLink,
   NavbarText,
   Badge,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { LogoutUser } from "./slice/userSlice";
+import { changeCurrency, LogoutUser } from "./slice/userSlice";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
 export default function NavBar() {
-  const {user,Cart} = useSelector((state) => state);
+  const { user, Cart } = useSelector((state) => state);
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const toggle = () => setIsOpen(!isOpen);
@@ -29,6 +33,10 @@ export default function NavBar() {
         <FontAwesomeIcon className="text-danger" icon={faFaceAngry} />
       </div>
     );
+  };
+  const handleChangeCurrency = (name) => {
+    dispatch(changeCurrency(name));
+    toast.success(`Currency changed to ${name}`);
   };
   return (
     <div>
@@ -55,7 +63,21 @@ export default function NavBar() {
                 {Cart.length}
               </Badge>
             </NavItem>
+            <UncontrolledDropdown className="Currency-info" nav inNavbar>
+              <DropdownToggle className="text-white" nav caret>
+                Currency
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={() => handleChangeCurrency("PKR")}>
+                  PKR
+                </DropdownItem>
+                <DropdownItem onClick={() => handleChangeCurrency("USD")}>
+                  USD
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
           </Nav>
+          <NavbarText className="text-white">{user.currency}</NavbarText>
           <Nav className="ms-auto " navbar>
             <NavbarText className="admin">
               <span className="text-white">Welcome</span>{" "}
