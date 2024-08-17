@@ -3,19 +3,19 @@ import { v4 } from "uuid";
 
 export const SliderItems = [
   {
-    src: "https://picsum.photos/id/123/1200/400",
+    src: "/Imgs/slide1.jpg",
     altText: "Slide 1",
     caption: "Slide 1",
     key: 1,
   },
   {
-    src: "https://picsum.photos/id/456/1200/400",
+    src: "./Imgs/slide2.jpg",
     altText: "Slide 2",
     caption: "Slide 2",
     key: 2,
   },
   {
-    src: "https://picsum.photos/id/678/1200/400",
+    src: "/Imgs/slide3.jpg",
     altText: "Slide 3",
     caption: "Slide 3",
     key: 3,

@@ -67,7 +67,7 @@ export function CheckOut() {
                         <th scope="row">{i + 1}</th>
                         <td>{item.name}</td>
                         <td>{item.description}</td>
-                        <td>PKR {item.price}</td>
+                        <td>PKR {item.price[user.currency].toFixed(2)}</td>
                         <td>
                           <Button
                             onClick={() => handleProductDelete(i)}
@@ -82,7 +82,7 @@ export function CheckOut() {
                       <td colSpan="3" className="text-center">
                         <strong>
                           Total: PKR{" "}
-                          {Cart.reduce((acc, item) => acc + item.price, 0)}
+                          {Cart.reduce((acc, item) => acc + (item.price[user.currency].toFixed(2)), 0)}
                         </strong>
                       </td>
                       <td colSpan="2">

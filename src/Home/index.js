@@ -60,7 +60,7 @@ function Home() {
            <img alt="Sample" src={item.image[0]} />
            <CardBody>
              <CardTitle tag="h5">{item.name}</CardTitle>
-             <CardText>{user.currency}{item.price[user.currency].toFixed(2)}</CardText> 
+             <CardText>{user.currency}:{item.price[user.currency].toFixed(2)}</CardText> 
              <Button color="primary" onClick={(e) => {
               dispatch(addToCart({...item, quantity: 1}));
               e.stopPropagation();
@@ -150,7 +150,7 @@ function Home() {
         </Row>
       )}
       {/* New Container with Three Columns */}
-      <Container fluid className="main-product-box mt-5">
+      <Container fluid className="main-product-box my-5">
         <Row className="box-flex gx-2 ">
           <Col className="products-left  " sm={6}>
             <div className="product-main">
@@ -158,8 +158,8 @@ function Home() {
               <h3 className="heading">Gaming</h3>
               <h2 className="main-heading ">CONSOLE</h2>
               <Button
-                color="primary"
-                className="game-btn text-white mt-3 py-2 px-5 rounded-pill"
+               
+                className="game-btn  mt-3 py-2 px-5 rounded-pill"
               >
                 Browse
               </Button>
@@ -172,9 +172,9 @@ function Home() {
               <h3 className="heading-glass">Game</h3>
               <h2 className="main-heading-glass ">oculus</h2>
               <Button
-                color="danger"
-                outline
-                className="game-btn  mt-3 py-2 px-5 rounded-pill bg-white text-black"
+                
+                
+                className="glass-btn  mt-3 py-2 px-5 rounded-pill bg-white text-black"
               >
                 Browse
               </Button>

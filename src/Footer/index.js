@@ -8,11 +8,11 @@ import {
   Input,
   Button,
 } from "reactstrap";
-
+import "./footer.css";
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4">
-      <Container>
+    <footer className="footer-box text-white py-4">
+      <Container className="footer-main">
         <Row className="align-items-center text-center text-md-left">
           {/* Logo Section */}
           <Col md="3" className="mb-3 mb-md-0">
@@ -77,7 +77,7 @@ const Footer = () => {
                   placeholder="Enter Your Email"
                 />
               </FormGroup>
-              <Button color="primary">Subscribe</Button>
+              <Button color="light">Subscribe</Button>
             </Form>
           </Col>
         </Row>
