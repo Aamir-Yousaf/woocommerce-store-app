@@ -60,10 +60,9 @@ function Home() {
            <img alt="Sample" src={item.image[0]} />
            <CardBody>
              <CardTitle tag="h5">{item.name}</CardTitle>
-             <CardText>{user.currency}{item.price[user.currency].toFixed(2)}</CardText>
-
+             <CardText>{user.currency}{item.price[user.currency].toFixed(2)}</CardText> 
              <Button color="primary" onClick={(e) => {
-              dispatch(addToCart(item));
+              dispatch(addToCart({...item, quantity: 1}));
               e.stopPropagation();
             } 
               }>
