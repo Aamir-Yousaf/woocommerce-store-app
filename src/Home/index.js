@@ -65,6 +65,7 @@ function Home() {
               dispatch(addToCart({...item, quantity: 1}));
               e.stopPropagation();
             } 
+            
               }>
                Add to Cart
              </Button>
@@ -150,7 +151,7 @@ function Home() {
         </Row>
       )}
       {/* New Container with Three Columns */}
-      <Container fluid className="main-product-box my-5">
+      <Container fluid className="main-product-box my-5 pb-3">
         <Row className="box-flex gx-2 ">
           <Col className="products-left  " sm={6}>
             <div className="product-main">
@@ -158,12 +159,16 @@ function Home() {
               <h3 className="heading">Gaming</h3>
               <h2 className="main-heading ">CONSOLE</h2>
               <Button
-               
+                color="primary"
                 className="game-btn  mt-3 py-2 px-5 rounded-pill"
               >
                 Browse
               </Button>
-              <img className="gaming-img" src="/Imgs/gaming.png"></img>
+              <img
+                color="primary"
+                className="gaming-img"
+                src="/Imgs/gaming.png"
+              ></img>
             </div>
           </Col>
           <Col sm={6} className="product-glass">
@@ -172,8 +177,7 @@ function Home() {
               <h3 className="heading-glass">Game</h3>
               <h2 className="main-heading-glass ">oculus</h2>
               <Button
-                
-                
+                color="primary"
                 className="glass-btn  mt-3 py-2 px-5 rounded-pill bg-white text-black"
               >
                 Browse
@@ -183,8 +187,51 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <Container fluid className="main-watch-box my-5">
+        <Row className="main-watch bg-red ">
+          <Col className="" sm={6}>
+            <div className="content-sale">
+              <p className="sale-para text-white">20% off</p>
+              <h1 className="fine-heading text-white">FINE SMILE</h1>
+              <p className="data-info text-white">22 Aug 2024</p>
+              <img className="watch-img" src="/Imgs/watch.png"></img>
+            </div>
+          </Col>
+          <Col className="" sm={6}>
+            <div className="content-company">
+              <p className="beats-para text-white">Beats of the Air</p>
+              <h1 className="summer-heading text-white">SUMMER SALE</h1>
+              <p className="company-info text-white">
+                Comapny that's grown up 230 to 490 employees in the last 12
+                months
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid className="main-sale-box my-5">
+        <Row className="main-sale bg-red ">
+          <Col className="" sm={6}>
+            <div className="content-sale">
+              <p className="sale-para text-white">20% off</p>
+              <h1 className="fine-heading text-white">FINE SMILE</h1>
+              <p className="data-info text-white">22 Aug 2024</p>
+              <img className="headphone-img" src="/Imgs/headphones.png"></img>
+            </div>
+          </Col>
+          <Col className="" sm={6}>
+            <div className="content-company">
+              <p className="beats-para text-white">Beats of the Air</p>
+              <h1 className="summer-heading text-white">SUMMER SALE</h1>
+              <p className="company-info text-white">
+                Comapny that's grown up 230 to 490 employees in the last 12
+                months
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </Container>
-    
   );
 }
 

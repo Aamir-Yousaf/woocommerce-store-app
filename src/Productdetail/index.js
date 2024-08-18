@@ -3,13 +3,14 @@ import { Container, Row, Col, Button } from "reactstrap";
 import { BestSelling, NewArrivalItems } from "../Data";
 import { useParams } from "react-router-dom";
 import "./product.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../slice/Cart";
 import user from "../slice/userSlice"
 export default function Index() {
   const { ProductId, TabIndex } = useParams();
   const [selectedproducts, setSelectedproducts] = useState(null);
    const dispatch = useDispatch();
+   const { Cart, user } = useSelector((state) => state);
   useEffect(() => {
     const product = [...BestSelling, ...NewArrivalItems].find(
       (item) => item.id === ProductId
@@ -73,12 +74,21 @@ export default function Index() {
             <h3 className="product-name">
               {selectedproducts.name || "Product Name Not Available"}
             </h3>
-            <h1> PKR.{selectedproducts.price[user.currency] || ""}</h1>
+            <h1>
+              {user.currency}:
+              {selectedproducts.price[user.currency]
+                ? selectedproducts.price[user.currency].toFixed(2)
+                : ""}
+            </h1>
             <p> {selectedproducts.shortDescription || ""}</p>
-            <Button color="primary" onClick={() => dispatch(addToCart(item))}></Button>
+            <Button
+              color="primary"
+              onClick={() => dispatch(addToCart(selectedproducts))}
+            >
+              Add to Cart
+            </Button>
           </div>
         </Col>
-        
       </Row>
     </Container>
   );

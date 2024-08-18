@@ -18,7 +18,7 @@ const cartSlice = createSlice({
     increaseQuantity: (state, action) => {
       const _id = action.payload;
       const _state = [...state];
-      const index = _state.findIndex((item) => item._id === _id);
+      const index = _state.findIndex((item) => item.id === _id);
       if (_state[index].quantity + 1 <= 5) {
         _state[index] = {
           ..._state[index],
@@ -29,7 +29,7 @@ const cartSlice = createSlice({
     decreaseQuantity: (state, action) => {
       const _id = action.payload;
       const _state = [...state];
-      const index = _state.findIndex((item) => item._id === _id);
+      const index = _state.findIndex((item) => item.id === _id);
       if (_state[index].quantity - 1 >= 1) {
         _state[index] = {
           ..._state[index],

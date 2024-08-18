@@ -60,14 +60,14 @@ export function Cart() {
                       <ButtonGroup className="product-quantity">
                         <Button
                           color="primary"
-                          onClick={() => dispatch(decreaseQuantity(item._id))}
+                          onClick={() => dispatch(decreaseQuantity(item.id))}
                         >
                           -
                         </Button>
                         <Button color="primary">{item.quantity}</Button>
                         <Button
                           color="primary"
-                          onClick={() => dispatch(increaseQuantity(item._id))}
+                          onClick={() => dispatch(increaseQuantity(item.id))}
                         >
                           +
                         </Button>
