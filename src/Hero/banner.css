@@ -1,0 +1,16 @@
+/* heroBanner.css */
+.hero-banner {
+  background-color:#a6b0bb8c;
+  padding: 50px 0;
+}
+
+.hero-banner h1 {
+  font-weight: bold;
+}
+
+.hero-banner p {
+  font-size: 1.25rem;
+}
+.img-fluid{
+  border-radius: 1.5rem;
+}

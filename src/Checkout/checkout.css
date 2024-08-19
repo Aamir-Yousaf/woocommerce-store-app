@@ -4,7 +4,26 @@
     justify-content: center;
     flex-direction: column;
 }
+.main-checkout.container-fluid {
+    width: 100% !important;
+    position:relative;
+   
+}
 
+.banner-hero.p-5 {
+     background-color: #0D6EFD;
+    width:90%!important;
+    border-radius:1.5rem;
+}
+
+h1.text-white.text-center.heading-check {
+    position:absolute;
+    left:37%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    font-weight:900;
+    letter-spacing:2px;
+}
 @media (max-width:480px) {
  .checkout-main .form-label {
     /* margin-bottom: .5rem; */

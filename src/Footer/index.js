@@ -15,7 +15,7 @@ const Footer = () => {
       <Container className="footer-main">
         <Row className="align-items-center text-center text-md-left">
           {/* Logo Section */}
-          <Col md="3" className="mb-3 mb-md-0">
+          <Col md="4" className="mb-3 mb-md-0">
             <img
               src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/logotype.png"
               alt="Logo"
@@ -29,34 +29,9 @@ const Footer = () => {
           </Col>
 
           {/* Quick Links Section */}
-          <Col md="3" className="mb-3 mb-md-0">
-            <h5>Quick Links</h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="#" className="text-light">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-light">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-light">
-                  Shop
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-light">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </Col>
-
+          
           {/* Contact Section */}
-          <Col md="3" className="mb-3 mb-md-0">
+          <Col md="4" className="mb-3 mb-md-0">
             <h5>Contact</h5>
             <p>+99 (0) 101 0000 888</p>
             <p>Patricia C. Amedee</p>
@@ -65,7 +40,7 @@ const Footer = () => {
           </Col>
 
           {/* Subscribe Section */}
-          <Col md="3" className="mb-3 mb-md-0">
+          <Col md="4" className="mb-3 mb-md-0">
             <h5>Subscribe To Our Email</h5>
             <p>For Latest News & Updates</p>
             <Form>

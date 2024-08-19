@@ -5,19 +5,22 @@ export const SliderItems = [
   {
     src: "/Imgs/slide1.png",
     altText: "Slide 1",
-    caption: "Slide 1",
+    caption:
+      "These headphones feature large ear cups that fully enclose the ears, providing excellent sound isolation and rich, immersive audio. ",
     key: 1,
   },
   {
     src: "./Imgs/slide2.png",
     altText: "Slide 2",
-    caption: "Slide 2",
+    caption:
+      "On-ear headphones rest on the ears rather than around them. They are more compact and portable than over-ear models, making them great for on-the-go use. ",
     key: 2,
   },
   {
     src: "/Imgs/slide3.png",
     altText: "Slide 3",
-    caption: "Slide 3",
+    caption:
+      " In-ear headphones are small, lightweight, and fit snugly inside the ear canal. They are highly portable, offering good sound quality and noise isolation, making them perfect for workouts and travel.",
     key: 3,
   },
 ];
@@ -55,7 +58,7 @@ export const NewArrivalItems = [
       USD: 1600 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
+      "/Imgs/headphone7.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
       "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
@@ -77,7 +80,7 @@ export const NewArrivalItems = [
       USD: 1500 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
+      "./Imgs/headphone6.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
       "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
@@ -102,7 +105,7 @@ export const NewArrivalItems = [
       USD: 900 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
+      "/Imgs/headphone3.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
       "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
@@ -128,7 +131,7 @@ export const BestSelling = [
       USD: 1200 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
+      "/Imgs/headphone4.jpg",
       "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
       "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
@@ -151,7 +154,7 @@ export const BestSelling = [
       USD: 1900 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
+      "/Imgs/headphone5.jpg",
       "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
@@ -174,7 +177,7 @@ export const BestSelling = [
       USD: 1900 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
+      "/Imgs/headphone4.jpg",
       "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
@@ -197,7 +200,7 @@ export const BestSelling = [
       USD: 1900 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2024/02/06/18/10/ai-generated-8557635_640.jpg",
+      "/Imgs/headphone6.jpg",
       "https://cdn.pixabay.com/photo/2013/07/18/10/57/polo-shirt-163562_640.jpg",
       "https://cdn.pixabay.com/photo/2016/07/17/20/19/t-shirt-1524677_640.jpg",
       "https://cdn.pixabay.com/photo/2024/04/17/18/40/ai-generated-8702726_640.jpg",
@@ -220,7 +223,7 @@ export const BestSelling = [
       USD: 1900 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2016/11/22/21/42/fashion-1850012_640.jpg",
+      "/Imgs/headphone7.jpg",
       "https://cdn.pixabay.com/photo/2016/11/21/15/58/necklace-1845810_640.jpg",
       "https://cdn.pixabay.com/photo/2017/08/07/15/57/t-shirt-2606690_640.jpg",
       "https://cdn.pixabay.com/photo/2018/01/15/07/22/green-3082583_640.jpg",
@@ -246,7 +249,7 @@ export const BestSelling = [
       USD: 1900 / USDprice,
     },
     image: [
-      "https://cdn.pixabay.com/photo/2016/11/21/15/58/necklace-1845810_640.jpg",
+      "/Imgs/headphone9.jpg",
       "https://cdn.pixabay.com/photo/2016/11/22/21/42/fashion-1850012_640.jpg",
       "https://cdn.pixabay.com/photo/2017/08/07/15/57/t-shirt-2606690_640.jpg",
       "https://cdn.pixabay.com/photo/2018/01/15/07/22/green-3082583_640.jpg",

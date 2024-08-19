@@ -22,7 +22,7 @@ import { BestSelling, NewArrivalItems, SliderItems } from "../Data"; // Assuming
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../slice/Cart";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import "animate.css";
 {
   
 }
@@ -52,21 +52,24 @@ function Home() {
        <Col xs={12} sm={3} key={index}>
          <Card
            onClick={() => Navigate(`/detail/${SelectedTab}/${item.id}`)} // Corrected onClick handler
-           className="main-product-card"
-          //  style={{
-          //    width: "19rem",
-          //  }}
+           className="main-product-card animate__animated animate__rubberBand"
+           //  style={{
+           //    width: "19rem",
+           //  }}
          >
            <img alt="Sample" src={item.image[0]} />
            <CardBody>
              <CardTitle tag="h5">{item.name}</CardTitle>
-             <CardText>{user.currency}:{item.price[user.currency].toFixed(2)}</CardText> 
-             <Button color="primary" onClick={(e) => {
-              dispatch(addToCart({...item, quantity: 1}));
-              e.stopPropagation();
-            } 
-            
-              }>
+             <CardText>
+               {user.currency}:{item.price[user.currency].toFixed(2)}
+             </CardText>
+             <Button
+               color="primary"
+               onClick={(e) => {
+                 dispatch(addToCart({ ...item, quantity: 1 }));
+                 e.stopPropagation();
+               }}
+             >
                Add to Cart
              </Button>
            </CardBody>
@@ -99,6 +102,7 @@ function Home() {
           >
             <img src={item.src} alt={item.altText} />
             <CarouselCaption
+              className="animate__animated animate__fadeInUp"
               captionText={item.caption}
               captionHeader={item.caption}
             />
@@ -153,7 +157,10 @@ function Home() {
       {/* New Container with Three Columns */}
       <Container fluid className="main-product-box my-5 pb-3">
         <Row className="box-flex gx-2 ">
-          <Col className="products-left  " sm={6}>
+          <Col
+            className="products-left animate__animated animate__rotateInDownLeft "
+            sm={6}
+          >
             <div className="product-main">
               <h5 className="sub-heading">Best</h5>
               <h3 className="heading">Gaming</h3>
@@ -171,7 +178,10 @@ function Home() {
               ></img>
             </div>
           </Col>
-          <Col sm={6} className="product-glass">
+          <Col
+            sm={6}
+            className="product-glass animate__animated animate__rotateInDownRight"
+          >
             <div className="product-main-glass">
               <h5 className="sub-heading-glass">Play</h5>
               <h3 className="heading-glass">Game</h3>
@@ -188,13 +198,13 @@ function Home() {
         </Row>
       </Container>
       <Container fluid className="main-watch-box my-5">
-        <Row className="main-watch bg-red ">
+        <Row className="main-watch bg-red animate__animated animate__fadeInLeft">
           <Col className="" sm={6}>
             <div className="content-sale">
               <p className="sale-para text-white">20% off</p>
               <h1 className="fine-heading text-white">FINE SMILE</h1>
               <p className="data-info text-white">22 Aug 2024</p>
-              <img className="watch-img" src="/Imgs/watch.png"></img>
+              <img className="watch-img " src="/Imgs/watch.png"></img>
             </div>
           </Col>
           <Col className="" sm={6}>
@@ -209,7 +219,10 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <Container fluid className="main-sale-box my-5">
+      <Container
+        fluid
+        className="main-sale-box my-5 animate__animated animate__fadeInRight"
+      >
         <Row className="main-sale bg-red ">
           <Col className="" sm={6}>
             <div className="content-sale">
