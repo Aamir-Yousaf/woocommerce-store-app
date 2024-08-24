@@ -23,9 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../slice/Cart";
 import { Navigate, useNavigate } from "react-router-dom";
 import "animate.css";
-{
-  
-}
+import { motion } from "framer-motion";
 function Home() {
   const dispatch = useDispatch();
   const {user} = useSelector((state)=> state);
@@ -59,11 +57,14 @@ function Home() {
          >
            <img alt="Sample" src={item.image[0]} />
            <CardBody>
-             <CardTitle tag="h5">{item.name}</CardTitle>
+             <CardTitle 
+             tag="h5">{item.name}
+             </CardTitle>
              <CardText>
                {user.currency}:{item.price[user.currency].toFixed(2)}
              </CardText>
              <Button
+               
                color="primary"
                onClick={(e) => {
                  dispatch(addToCart({ ...item, quantity: 1 }));
@@ -204,7 +205,17 @@ function Home() {
               <p className="sale-para text-white">20% off</p>
               <h1 className="fine-heading text-white">FINE SMILE</h1>
               <p className="data-info text-white">22 Aug 2024</p>
-              <img className="watch-img " src="/Imgs/watch.png"></img>
+              <motion.img
+                drag
+                dragConstraints={{
+                  top: -50,
+                  left: -50,
+                  right: 50,
+                  bottom: 50,
+                }}
+                className="watch-img "
+                src="/Imgs/watch.png"
+              ></motion.img>
             </div>
           </Col>
           <Col className="" sm={6}>
@@ -221,7 +232,7 @@ function Home() {
       </Container>
       <Container
         fluid
-        className="main-sale-box my-5 animate__animated animate__fadeInRight"
+        className="main-sale-box my-5 "
       >
         <Row className="main-sale bg-red ">
           <Col className="" sm={6}>
@@ -229,7 +240,10 @@ function Home() {
               <p className="sale-para text-white">20% off</p>
               <h1 className="fine-heading text-white">FINE SMILE</h1>
               <p className="data-info text-white">22 Aug 2024</p>
-              <img className="headphone-img" src="/Imgs/headphones.png"></img>
+              <motion.img
+                className="headphone-img"
+                src="/Imgs/headphones.png"
+              ></motion.img>
             </div>
           </Col>
           <Col className="" sm={6}>

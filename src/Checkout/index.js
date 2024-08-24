@@ -16,10 +16,11 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { emptyCart, removeFromCart } from "../slice/Cart"; // Adjust the import path
 import "./checkout.css";
 import { useNavigate } from "react-router-dom";
-import "animate.css"
+import "animate.css";
+import { motion } from "framer-motion";
 export function CheckOut() {
   const navigate = useNavigate();
-  const { Cart,user } = useSelector((state) => state);
+  const { Cart, user } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const handleProductDelete = (index) => {
@@ -33,20 +34,20 @@ export function CheckOut() {
     dispatch(emptyCart());
     navigate("/");
   };
-  const handleLogin = ()=>{
+  const handleLogin = () => {
     navigate("/login");
-  }
-  const handleBackToCart = ()=>{
+  };
+  const handleBackToCart = () => {
     navigate("/cart");
-  }
+  };
   return (
     <>
       <Container fluid className="main-checkout">
         <Row>
           <div className="banner-hero m-5 p-5">
-            <h1 className="text-white text-center heading-check animate__animated animate__pulse">
+            <motion.h1 className="text-white text-center heading-check animate__animated animate__pulse">
               Checkout
-            </h1>
+            </motion.h1>
             <img
               className="animate__animated animate__pulse"
               src="/Imgs/headphones.png"
@@ -57,8 +58,14 @@ export function CheckOut() {
       <Container fluid className="my-5 checkout-main">
         {user.isLoggedIn ? (
           <>
-            {" "}
-            <h2 className="my-3 text-center">Checkout Page</h2>
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 2 }}
+              className="my-3 text-center"
+            >
+              Checkout Page
+            </motion.h2>
             <Row>
               <Col md={8} className="order-summary ">
                 <h4 className="mb-4">Order Summary</h4>
@@ -107,8 +114,10 @@ export function CheckOut() {
                           </strong>
                         </td>
                         <td colSpan="2">
-                          <Button color="primary" onClick={handleBackToCart}>
-                            {" "}
+                          <Button
+                            color="primary"
+                            onClick={handleBackToCart}
+                          >
                             Back To Cart
                           </Button>
                         </td>

@@ -11,7 +11,7 @@
 }
 
 .banner-hero.p-5 {
-     background-color: #0D6EFD;
+     background-color: #000000;
     width:90%!important;
     border-radius:1.5rem;
 }
@@ -23,6 +23,10 @@ h1.text-white.text-center.heading-check {
     transform:translate(-50%,-50%);
     font-weight:900;
     letter-spacing:2px;
+}
+.my-5.checkout-main.container-fluid {
+    width:95%;
+   
 }
 @media (max-width:480px) {
  .checkout-main .form-label {

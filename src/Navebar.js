@@ -19,6 +19,7 @@ import { changeCurrency, LogoutUser } from "./slice/userSlice";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceAngry } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 export default function NavBar() {
   const { user, Cart } = useSelector((state) => state);
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +40,13 @@ export default function NavBar() {
     toast.success(`Currency changed to ${name}`);
   };
   return (
-    <div>
-      <Navbar color="primary" expand={"sm"}>
+    <motion.div
+    initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{dely:1, duration:4}}
+
+    >
+      <Navbar color="black" expand={"sm"}>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
@@ -56,9 +62,9 @@ export default function NavBar() {
                 Cart
               </Link>
               <Badge
-                color="info"
+                
                 pill
-                className="position-absolute   badge-cart"
+                className="position-absolute   badge-cart text-white"
               >
                 {Cart.length}
               </Badge>
@@ -103,6 +109,6 @@ export default function NavBar() {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </motion.div>
   );
 }
