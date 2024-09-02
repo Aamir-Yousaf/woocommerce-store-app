@@ -114,10 +114,7 @@ export function CheckOut() {
                           </strong>
                         </td>
                         <td colSpan="2">
-                          <Button
-                            color="primary"
-                            onClick={handleBackToCart}
-                          >
+                          <Button color="primary" onClick={handleBackToCart}>
                             Back To Cart
                           </Button>
                         </td>

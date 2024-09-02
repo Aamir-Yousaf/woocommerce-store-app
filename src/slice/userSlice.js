@@ -4,8 +4,12 @@ import { toast } from "react-toastify";
 const userSlice = createSlice({
   name: "user",
   isLoggedIn:false,
-  initialState: {},
-  currency: "PKR",
+  initialState: {
+    isLoggedIn: false,
+    user: {},
+    currency: "PKR",  // Initialize with PKR currency as default. You can replace this with your preferred currency.
+  },
+  
   reducers: {
     setUserLogin: (state, action) => {
       return (state = {
